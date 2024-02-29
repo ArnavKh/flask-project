@@ -1,5 +1,7 @@
 # Linking flask to html file
 
+# The html file must be saved under folder names 'templates'
+
 from flask import Flask, render_template
 
 

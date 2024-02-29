@@ -1,3 +1,7 @@
+<!-- 
+  Displaying data from python list onto the webpage
+ -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,8 +22,8 @@
   </head>
 
   <body>
-     <div class="container text-center">
-          <h1>Home Page</h1>
+     <div class="container">
+          <h1 class = "text-center">{{companyName}} Careers</h1>
       
           <img class = "img-fluid" src = "static/earth.webp" id = "banner">
       
@@ -28,9 +32,15 @@
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda illo saepe exercitationem, iusto reiciendis mollitia vitae veniam. Odio, dolorum architecto perspiciatis sequi distinctio, quo est in consectetur iste quibusdam magnam.
           </p>
       
-          <h2>Open Positions</h2>
-          <p>TODO - Show the jobs here</p>
-          <button>Contact Us</button>
+          <h2 style = "margin-bottom: 30px">Open Positions</h2>
+
+          <div>
+            {% for job in jobs %}
+              {% include 'lesson3-jobItems.html' %}
+            {% endfor %}
+          </div>
+
+          <button type = "button" class = "btn btn-outline-primary">Contact Us</button>
      </div>
   </body>
 </html>

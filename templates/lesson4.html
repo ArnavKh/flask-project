@@ -1,0 +1,49 @@
+<!-- 
+  Displaying data from python list onto the webpage
+ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+     #banner {
+          height: 300px;
+     }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- <link rel = "stylesheet" href = "styles.css"> -->
+    <title>Hello, world!</title>
+
+  </head>
+
+  <body>
+    {% include 'lesson4-nav.html' %}
+     <div class="container">
+          <h1 class = "text-center">{{companyName}} Careers</h1>
+      
+          <img class = "img-fluid" src = "static/earth.webp" id = "banner">
+      
+          <h2>About us</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse fugit cumque quo, molestiae ipsa perspiciatis quaerat eos voluptas omnis temporibus enim asperiores magnam aspernatur error adipisci obcaecati laboriosam! Distinctio, dolor.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda illo saepe exercitationem, iusto reiciendis mollitia vitae veniam. Odio, dolorum architecto perspiciatis sequi distinctio, quo est in consectetur iste quibusdam magnam.
+          </p>
+      
+          <h2 style = "margin-bottom: 30px">Job Openings</h2>
+
+          <div>
+            {% for job in jobs %}
+              {% include 'lesson4-jobItems.html' %}
+            {% endfor %}
+          </div>
+
+          <a href = "mailto:akhadkatkar@gmail.com?subject=Questions%20about%20job%20openings&body=Name%3A%20%3CYour%20Name%3E%0A%0ALocation%3A%20%3CYour%20Location%3E" type = "button" class = "btn btn-outline-primary">Contact Us</a>
+
+          {% include 'lesson4-footer.html' %}
+     </div>
+  </body>
+</html>
